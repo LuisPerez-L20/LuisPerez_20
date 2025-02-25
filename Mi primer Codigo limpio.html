@@ -1,0 +1,543 @@
+<DOCTYPE HTML>  
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primera Pagina</title>
+</head>
+    <style>
+        /*Este codigo de css es exckusivamente para la tabla*/
+        table{
+            text-align: center;
+            width: 100%; 
+            /*se utiilza para que la tabl ocupe el ancho de la pagina*/
+            border-collapse: collapse;
+            /*Hace que los bordes de las celdas de la tabla se fusionen en un solo borde,
+             en lugar de tener bordes dobles entre las celdas.*/
+        }
+        /*Este codigo es exclusivamente para las columnas y filas en bordes*/
+        th,td{
+            border: 1px solid #ddd;
+            /*Aplica un borde de 1 píxel, de tipo sólido y de color gris claro (#ddd)*/
+            padding: 8px; 
+            /*Añade un espacio interno de 8 píxeles en cada celda, lo que mejora la legibilidad
+             y hace que el contenido no toque directamente los bordes de las celdas.*/
+        }
+        /*Este codigo es exclusivamente para la colunma de los temas*/
+        th{
+            background-color: #f2f2f2;
+            /*Establece un color de fondo gris muy claro (#f2f2f2) para las celdas de la cabecera 
+            de la tabla (<th>)*/
+            text-align: center;
+            /*Alinea el texto en las celdas de la cabecera a la izquierda.*/
+        }
+        /*Este es para el logo*/
+        #logo{
+            width: 150px; /*paga ajustar el ancho*/
+            height: auto; /*Mantiene la poporcion de la imagen*/
+        }
+        /*Este es el codig para editar la parte del footer*/
+        footer{
+            background-color: #333; /*este es para el fondo del cuadrado*/
+            color: #fff; /*este es el color del texto*/
+            padding: 20px; /*este es para elespacio interno*/
+            text-align: center; /*este es para centrar el texto*/
+        }
+        .footer-content {
+            max-width: 1200px; /*este es para el ancho maximo del contenido */
+            margin: 0 auto; /*este es para centrar el contenido horizontalmente */
+        }
+
+        .footer-link a {
+            color: #1e90ff; /*este es para el color del enlace */
+            text-decoration: none; /*este es para quitar subrayado */
+            margin-top: 10px; /*este es para espaciado superior */
+            display: inline-block; /*este es para mostrar en línea */
+        }
+
+        .footer-link a:hover {
+            text-decoration: underline; /*este es para subrayar al pasar el cursor */
+        }   
+        .playstore-button {
+            display: inline-flex; /* Define un contenedor flexible en línea */
+            align-items: center; /* Alinea los elementos en el centro verticalmente */
+            justify-content: center; /* Centra los elementos horizontalmente */
+            border: 2px solid #000; /* Define un borde negro de 2px */
+            border-radius: 9999px; /* Hace los bordes completamente redondeados */
+            background-color: rgba(0, 0, 0, 1); /* Fondo negro con opacidad total */
+            padding: 0.625rem 1.5rem; /* Espaciado interno: 0.625rem arriba/abajo, 1.5rem izquierda/derecha */
+            text-align: center; /* Centra el texto */
+            color: rgba(255, 255, 255, 1); /* Texto blanco */
+            outline: 0; /* Elimina el contorno de enfoque por defecto */
+            transition: all 0.2s ease; /* Suaviza las transiciones de estilo en 0.2 segundos */
+            text-decoration: none; /* Elimina el subrayado del enlace */
+        }
+
+        /* Estilo del boton al pasar el cursor */
+        .playstore-button:hover {
+            background-color: transparent; /*Hace el fondo transparente */
+            color: rgba(0, 0, 0, 1); /*Cambia el color del texto a negro */
+        }
+
+        /* Estilo del icono SVG */
+        .icon {
+            height: 1.5rem; /*Altura del icono */
+            width: 1.5rem; /*Ancho del icono */
+        }
+        
+        /* Contenedor del texto */
+        .texts {
+            margin-left: 1rem; /*Espacio entre el icono y el texto */
+            display: flex; /*Define un contenedor flexible */
+            flex-direction: column; /*Organiza los elementos en una columna */
+            align-items: flex-start; /*Alinea los textos a la izquierda */
+            line-height: 1; /*Altura de linea uniforme */
+        }
+
+        /*Estilo de la primera linea de texto ('GET IT ON') */
+        .text-1 {
+            margin-bottom: 0.25rem; /*Espacio inferior entre las lineas de texto */
+            font-size: 0.75rem; /*Tamano de fuente pequeno */
+            line-height: 1rem; /*Altura de linea de 1rem */
+        }
+
+        /*Estilo de la segunda linea de texto ('Google Play') */
+        .text-2 {
+            font-weight: 600; /*Fuente con peso semi-negrita */
+        }  
+        .appstore-button:hover{
+            background-color: transparent;
+            color: rgba(0, 0, 0, 1); 
+        }
+        .appstore-button {
+            display: inline-flex; /* Define un contenedor flexible en línea */
+            align-items: center; /* Alinea los elementos en el centro verticalmente */
+            justify-content: center; /* Centra los elementos horizontalmente */
+            border: 2px solid #000; /* Define un borde negro de 2px */
+            border-radius: 9999px; /* Hace los bordes completamente redondeados */
+            background-color: rgba(0, 0, 0, 1); /* Fondo negro con opacidad total */
+            padding: 0.625rem 1.5rem; /* Espaciado interno: 0.625rem arriba/abajo, 1.5rem izquierda/derecha */
+            text-align: center; /* Centra el texto */
+            color: rgba(255, 255, 255, 1); /* Texto blanco */
+            outline: 0; /* Elimina el contorno de enfoque por defecto */
+            transition: all 0.2s ease; /* Suaviza las transiciones de estilo en 0.2 segundos */
+            text-decoration: none; /* Elimina el subrayado del enlace */
+        }
+        .text1 {
+            margin-bottom: 0.25rem; /*Espacio inferior entre las lineas de texto */
+            font-size: 0.75rem; /*Tamano de fuente pequeno */
+            line-height: 1rem; /*Altura de linea de 1rem */
+        }
+        .text2 {
+            font-weight: 600; /*Fuente con peso semi-negrita */
+        }  
+        .textst {
+            margin-left: 1rem; /*Espacio entre el icono y el texto */
+            display: flex; /*Define un contenedor flexible */
+            flex-direction: column; /*Organiza los elementos en una columna */
+            align-items: flex-start; /*Alinea los textos a la izquierda */
+            line-height: 1; /*Altura de linea uniforme */
+        }
+
+        .login-container{
+            background-color: #fff; /*para poner el fondo de diferente color*/
+            padding: 20px; /*Agrega un espacio interno dentro del cuadro*/
+            border-radius: 8px; /*Redonde las esquinas del cuadrado*/
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1); /*Agrega una sombra al contenedor*/
+        }  
+        .login-container h2{
+            margin-bottom: 20px; /*Agrega un espacio inferior*/
+        }
+        .login-container input{
+            width: 100%; /*Hace que los contenedor ocupen el 100% del cuadro*/
+            padding: 10px;/*Agrega un espacio interno*/
+            margin: 10px 0; /*Establece un espacio superior e inferior*/
+            border: 1px solid #ccc; /*Agrega un borde de color en el campo de entrada*/
+            border-radius: 4px; /*Redonde las esquinas*/
+        }
+
+        .login-container button {
+            width: 100%; /*Hace que el boton ocupe el ancho de el contenedor*/
+            padding: 10px; /*Agrega un espacio interno dentro del boton*/
+            background-color: #007BFF; /*Establece un color*/
+            color: #fff; /*Cambia el color de el texto*/
+            border: none; /*Elima cualquier borde*/
+            border-radius: 4px; /*Redondea la esquina*/
+            cursor: pointer; /*Cambia el cursos a una mano*/
+        }
+        .login-container button:hover {
+            background-color: #0056b3; /*cambia el boton del boton cuando el cursor pasa por ahi*/
+        }
+        #mensaje{
+            margin-top: 10px; /*Aplica un esapcio entre el fomulario y el mensaje*/
+            font-size: 16px; /*Establece el tamano de la funenta*/
+            text-align: center;
+        }
+        h1{
+            background-color: black;
+            text-align: center;
+            color: white;
+            margin: borde 10px solid auto;
+            margin-top: 25px;
+            margin-left: 15%;
+            margin-right: 15%;
+            padding: 20px;            
+        }
+        .pagina-principal img{
+            border-radius: 5px; /*dimensiona sus borders*/
+            margin-top: 20px; /*pone espacio en la parte de arriba*/
+            margin-left: 15px; /*pone espacio en la parte de la izquierda*/
+            height: auto; /*ajista la imagen a su medida*/
+        }
+        .pagina-principal p{
+            text-align: center; /*Alinea el texto al centro*/
+            background-color: black; /*da color a la parte del fondo de el texto*/
+            color: white; /*da color a la letra*/
+            font-size: 40; /*le da medida a la letra*/
+            
+            
+        }
+            
+    </style>
+    
+        <header>
+            <h1>Mi primer Codigo</h1>
+
+            <img  src="logo.png" alt="Logo de mi pagina" id="logo" name="logo" >
+            <!--Este codigo es unica y exclusivamente para poner logos en tu pagina web-->
+            <br>
+            <link rel="icon" href="c:\Users\usuario\OneDrive\Documentos\codigos\icono.ico" type="image/png"> <!--Aun no sirve-->
+            <!--Este codigo es para ponerle un icono a tu pagina web-->
+        </header>  
+        <body>
+
+         <p>Este es un texto normal</p>
+         <p>este es un texto que resalta la palraba <strong> Fuerte</strong></p>
+         <button type="button">This is a button</button>
+         <p>Este es un texto que tiene un espacio y <br>  sigue con la continuacion del texto</p>
+         <!--este es un comentario-->
+         <p> Debajo de este texto ahi una linea</p>
+         <hr>
+         <form action="/formulario" method="GET">
+            <label for="nombre">Nombre</label>
+            <input value="Nombre" type="text" id="nombre" name="nombre" placeholder="Nombre " />
+          <br>  
+           <label for="apellido">Apellido</label>
+           <input value="Apellido" type="apellido" id="apellido" name="apellido" placeholder="Apellido" />
+          <br>
+          <textarea cols="10" rows="10" id="comentario" placeholder="Ingrese comentario" name="comentario" >Valor por Defecto</textarea>
+         <br>
+         <button type="button">Tipo Boton</button>
+         <button type="reset">Tipo reset</button>
+         <button type="submit">Tipo submit</button>
+         </form>
+
+         <p>Tipo de Lista</p>
+         <hr>
+         <!--Lista no Ordenada-->
+         <ul>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>        
+         </ul>
+         <!--LIsta Ordenada-->
+         <ol>
+            <li value="50">Elemento 1</li> <!--El value sirve para odernada la lista con el valor que quieras-->
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+            <li>Elemento 4</li>
+            <li>
+                <ol>
+                    <li style="list-style-type: lower-roman;">sub Elemento 1</li>
+                    <li style="list-style-type: lower-roman;">sub Elemento 2</li>
+                    <li style="list-style-type: lower-roman;">sub Elemento 3</li>
+                </ol>
+            </li>
+         </ol>
+         <hr>
+         <h2>Este es un Formulario de Usuario</h2>
+    
+         <div name="Formulario">
+            <p>Usuario</p>
+            <input type="text" placeholder="Introducce Usuario" />
+            
+            <p>Contrasena</p>
+            <input type="password" placeholder="Introducce Contraseña" />
+
+            <p>Correo Electronico</p>
+            <input type="email" placeholder="Introducce Correo Electronico" />
+
+            <p>Numero de telefono</p>
+            <input type="text"  placeholder="Introducce Numero de Telefono"/>
+
+            <br>            
+            <input type="submit" value="Entar" />
+            <!--Todo esto fue un registro-->
+
+         </div>
+
+   
+         <hr>
+           <p>esta sera una Imagen</p>
+    
+           <img src="tenis pumas.jpeg" height="300"></img> <!--Codigo para la Imagen-->
+           <p>Marca: Puma <br> Sexo: Hombre <br> Talla: 22-29 <br> Precio: 2300$ </p>    
+            <!--Los "<br>", Sirven para dar un salto de linea-->
+
+            <hr>
+            <p>Este sera un vinculo</p>
+            <button><a href="https://www.adidas.mx/" target="_blank">Ir a Adidas </a></button>  <!--Esto es un codigo para un Vinculo-->
+            <!--El target con el "blank" lo que hace es que a la hora de que el usuario da click al enlace lo llevara a la pagina pero en otra pestaña-->
+            <br>
+            <p>estas son las 6H(Encabazados) que existen</p>
+            <h1>Este es el primero</h1>
+            <h2>Este es el segundo</h2>
+            <h3>Este es el tercero</h3>
+            <h4>Este es el cuarto</h4>
+            <h5>Este es el cinco</h5>
+            <h6>Este es el sexto</h6>
+
+            <hr>
+
+            <p>Ahora haremos una tabla</p>
+            <table>
+                <tr>
+                    <!--Aqui vas las columnas de nuestra tabla osea los titulos-->
+                <th>Nombre</th> 
+                <th>Ciudad</th>
+                <th>Edad</th>
+                <th>F_Nacimiento</th>
+                </tr>
+                <tr>
+                    <!--Aqui van los datos de bajo de la columna iniciando de izquierda a derecha no seran en forma de lista si no de fila-->
+                    <td>Luis</td>
+                    <td>Mexico</td>
+                    <td>20 anos</td>
+                    <td>1987-11-20</td>
+                </tr>
+                <tr>
+                    <td>Maria</td>
+                    <td>GuanaJuato</td>
+                    <td>19 anos</td>
+                    <td>2004-07-23</td>
+                </tr>
+                <tr>
+                    <td>Jose</td>
+                    <td>Sinaloa</td>
+                    <td>32 anos</td>
+                    <td>1986-05-23</td>
+                </tr>
+
+            </table>
+            <br>
+
+            <p>En este codig intentaremos poner una barra desplegable</p>
+            <label for="Nombres">selecciona un Nombre:</label> <!--En este codigo como primer paso seleccionamos la opcion-->
+            <select name="Nombres" id="Nombres">
+                <option value="seleccionar">Seleccionar</option> <!--Se empizan a agregar los nombres-->
+                <option value="Jose">Jose</option> 
+                <option value="amanda">Amanda</option>
+                <option value="Ricardo">Ricardo</option>
+                <option value="Sandra">Sandra</option>    
+            </select>
+
+            <br>
+            <p>Es hora de conectar vinculos de diferentes paginas web propias</p>
+            <button><a href="SegundaPagina.html" style="color:#333">Vamos a la segunda pagina</a></button>
+            <!--El codigo tiene como funcion mandarnos a la segunda pagina con un boton agregado-->
+            <br>
+            <br>
+
+            <!-- Enlace principal con la clase 'playstore-button' -->
+            <a class="playstore-button" href="#">
+                <!-- icono SVG (grafico vectorial escalable) -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="icon" viewBox="0 0 512 512">
+                    <!-- Define la forma del icono con coordenadas y comandos en el atributo 'd' -->
+                    <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>
+                </svg>
+                <!-- Contenedor de texto del boton -->
+                <span class="texts">
+                <!-- Primera lonea de texto: 'GET IT ON' -->
+                <span class="text-1">GET IT ON</span>
+                <!-- Segunda linea de texto: 'Google Play' -->
+                <span class="text-2">Google Play</span>
+                </span>
+            </a>
+            <a class="appstore-button" href="#">
+                <svg xmin="http://www.w3.org/2000/svg" fill="currentColor" class="icon" viewBox="0 0 512 512">
+                    <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139 20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z"></path>                    
+                </svg>
+                <span calss="textst">
+                    <span class="text1">GET IT ON</span>
+                    <span class="text2">App Store</span>
+                </span>
+            </a>
+        
+            <br>
+            <br>
+            <hr>
+            <p>Ahora Viene lo fuerte, haremos un Login</p>
+
+            <div class="login-container"> <!--Se inicia la clase dandole un nombre el cual llamaremos desde el codigo css-->
+                <h2>Iniciar Sesion</h2> <!--Se ocupa la etiqueta h2 para resaltar un poco el texto-->
+                <form action="SegundaPagina.html" method="post"> 
+                    <!--Su nombre lo dice,  la accion es a donde ira al darle entrar y el metodo es un POST como un metodo de verificacion-->
+                    
+                    <input type="text" name="username" placeholder="Usuario" required> 
+                    <!--El "required es necesario para mandar informacion de login sin que los campos esten vacios"-->
+                    
+                    <input type="password" name="password" placeholder="Contrasena" required>
+                    
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>    
+            <hr>
+
+            <p>Bien, Ahora no solo que pongas el usuario y contrasena que gustes si no que ahora tendra un validacion</p>
+            <!--Es hora de ocupar JavaScript-->
+            <script>
+                function validarusuario(){  //una vez que el usuario incia su login entra a esta funcion
+                    var Usuario = document.getElementById("Usuario").value; //Obtiene el valor que el usuario ha introduccido
+                    var Contrasena = document.getElementById("Contrasena").value; //Obtiene el valor que el usuario ha introduccido
+
+                    var UC="luis"; //se declara el usuario
+                    var CC="123"; //se declara la contrasena
+                    var mensajeDIV = document.getElementById("mensaje");
+                    
+                    mensajeDIV.style.display = "none"; //Se oculta el mensaje
+
+                    if  (Usuario ==UC && Contrasena == CC){ //se verifica si  la credencial es correcta en ambos casos
+                        mensajeDIV.style.color= "green";
+                        mensajeDIV.innerHTML ="Sesion Exitosa";
+                        mensajeDIV.style.display ="block"; //para mostrar el mensaje
+
+                    }
+                    else{
+                    mensajeDIV.style.color ="red";
+                    mensajeDIV.innerHTML ="Usuario o Contrasena Incorrecta";
+                    mensajeDIV.style.display ="block";
+                    }
+                }
+            </script>
+            <div class="login-container"> 
+                <h2>Iniciar Sesion</h2> 
+                <form onsubmit="event.preventDefault(); validarusuario ();"><!--el "event.preventDefault" previene que la pagina se recargue al enviar el formulario--> <!--El "validarusuario" llama a la funcion--> 
+                    <input id="Usuario" type="text" name="username" placeholder="Usuario" required> <!--el campo donde el usuario introducce su dato-->
+                    <input id="Contrasena" type="password" name="password" placeholder="Contrasena" required> <!--igual, para que el usuario introudzca el dato --> 
+
+                    <button type="submit">Entrar</button> <!--Se ejecuta la opcion de enviar el formulario-->
+                </form>
+                <div id="mensaje" style="color: red; display: none;"></div>
+            </div>  
+            <!--Texto con un sudbrayado de color amarillo predeterminado-->
+            <p>Este es un texto con un <mark>Marcado Amarillo Predeterminado</mark> </p>
+            <p>Estes es un Texto con un <span>marcado mas visible</span></p>
+
+            <!--Todos los imput que conozco-->
+
+            <input type="text" placeholder="Ingrese Texto">
+            <hr>
+            <input type="password" placeholder="Ingresa Password">
+            <hr>
+            <input type="email" placeholder="Ingresa Correo">
+            <hr>
+            <input type="number" placeholder="Selecciona Numero">
+            <hr>
+            <input type="checkbox" />
+            <hr>
+            <input type="radio" />
+            <hr>
+            <input type="hidden" />
+            <hr>
+            <input type="button" />
+            <hr>
+            <input type="color" />
+            <hr>
+            <input type="file" />
+            <hr>
+            <input type="image" />
+
+            <br>
+            <hr>
+            <p>Es hora de hacer una tabla Y Agregarles datos como la longitud</p>
+
+            <label for="page-count">Número de Páginas:</label> <!--El "page-count sera una variable que se ocupara para la longitud de la tabla"-->
+            <input type="number" id="page-count" name="page-count" /> <!--Aqui se Agrega la longitud-->
+            <button onclick="crearTabla()">Crear Tabla</button> <!--Se crea la tabla-->
+        
+            <table id="dataTable" border="1"> <!--Se le informa a la tabla que tendra un borde de 1-->
+                <thead>
+                    <tr>
+                        <th>Número de Página</th> <!--Las Columnas que llevara la tabla-->
+                        <th>Nombre</th>
+                        <th>Estado</th>
+                        <th>Edad</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- La tabla se llenará dinámicamente aquí -->
+                </tbody>
+            </table>
+        
+            <script>
+                function crearTabla() {
+                    var pageCount = document.getElementById("page-count").value; //captura el numero de la pagina ingresado
+                    var tableBody = document.getElementById("dataTable").getElementsByTagName("tbody")[0]; //esta parte es para hacer valido la agregacion de la tabla dinamica
+                    
+                    
+                    tableBody.innerHTML = "";// Limpiar cualquier tabla anterior
+                    
+                    // Crear las filas según el número de páginas
+                    for (var i = 1; i <= pageCount; i++) {
+                        var row = tableBody.insertRow();
+                        
+                        // Columna para el número de página
+                        var cell1 = row.insertCell(0);
+                        cell1.textContent = i;
+                        
+                        // Columna para el Nombre
+                        var cell2 = row.insertCell(1);
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        cell2.appendChild(input);
+
+                        //columna para el Estado
+                        var cell3 = row.insertCell(2);
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        cell3.appendChild(input);
+
+                        //Columna para la Edad
+                        var cell4 = row.insertCell(3);
+                        var input = document.createElement("input");
+                        input.type = "text";
+                        cell4.appendChild(input);
+                    }
+                }
+            </script>
+
+
+            <br>
+            <p>Mini pagina web de tenis</p>
+            <div class="pagina-principal">
+                <p>Hugo Boos</p>
+                <img src="hugo boos.jpeg " />
+
+            </div>
+
+            
+            
+
+            <footer>
+                <div class="footer-content">
+                    <p>Derechos de autor @ 2025 - www.luis,com</p>
+                    <div class="footer-link">
+                        <a href="/terminos-de-luis">Terminos y condiciones</a>
+                    </div>
+                </div>
+            </footer>
+            
+    </body>
+</html>
